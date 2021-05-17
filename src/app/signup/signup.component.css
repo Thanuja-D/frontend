@@ -1,0 +1,13 @@
+.signup-container{
+  align-items: center;
+  width: 50%;
+}
+
+.terms-link{
+  margin-left: 10px;
+}
+
+.btn{
+  width: 100%;
+  margin-top: 20px;
+}

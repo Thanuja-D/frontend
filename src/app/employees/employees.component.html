@@ -1,0 +1,59 @@
+<h1> Employees </h1>
+<div class="employee-table container-fluid">
+  <div class="row justify-content-start">
+    <div class="col">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Salary</th>
+            <th scope="col">Department</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let employee of employees; let i = index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{employee.name}}</td>
+            <td>{{employee.salary}}</td>
+            <td>{{employee.department}}</td>
+            <td><button (click)="deleteUser(employee.name)" type="button" class="btn btn-warning form-button">Remove</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col input-form">
+      <div>
+        <h2> Add/Edit an Employee </h2>
+      </div>
+
+      <div class="form-group">
+        <label for="nameInput">Full Name</label>
+        <input [(ngModel)]="user.name" type="text" class="form-control" id="nameInput" placeholder="Jhon Doe"/>
+      </div>
+      <div class="form-group">
+        <label for="salaryInput">Salary</label>
+        <input [(ngModel)]="user.salary" type="number" class="form-control" id="salaryInput" placeholder="10000"/>
+      </div>
+      <div class="form-group">
+        <select class="custom-select" [(ngModel)]="user.department" id="departmentInput">
+        <option value="Marketing">Marketing</option>
+        <option value="HR Management">HR Management</option>
+          <option value="SE">SE</option>
+          <option value="QA">QA</option>
+        </select>
+      </div>
+
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <button (click)="saveUser()" type="button" class="btn btn-warning form-button">Add Employee</button>
+      </div>
+
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <button (click)="editUser()" type="button" class="btn btn-warning form-button">Update Employee</button>
+      </div>
+
+    </div>
+  </div>
+</div>
